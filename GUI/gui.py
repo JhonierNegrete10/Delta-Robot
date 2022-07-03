@@ -2,8 +2,7 @@ from tkinter import *
 import tkinter as tk 
 from tkinter import ttk 
 from tkinter import messagebox 
-# import tkinter.font as font 
-# from tkinter import filedialog
+
 
 from c_inversa import c_inversa
 from backend_esp import backend
