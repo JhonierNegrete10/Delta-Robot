@@ -1,7 +1,7 @@
 import requests 
 import numpy as np 
 from math import *
-import json
+
 
 import gui
 

@@ -2,15 +2,15 @@ from tkinter import *
 import tkinter as tk 
 from tkinter import ttk 
 from tkinter import messagebox 
-import tkinter.font as font 
-from tkinter import filedialog
+# import tkinter.font as font 
+# from tkinter import filedialog
 
 from c_inversa import c_inversa
 from backend_esp import backend
 
 import numpy as np 
 
-import os 
+# import os 
 
 
 class Application(ttk.Frame):
@@ -50,7 +50,7 @@ class Application(ttk.Frame):
             
         except Exception as e:
             print(str(e))
-            # self.log.logger.error("Error master application"+ str(e))  
+            
     
     
     def create_widgets(self): 
@@ -88,12 +88,7 @@ class Application(ttk.Frame):
         list_t1 =[53.78,49.57,1.31,8.29]
         list_t2 =[8.29, 1.31, 49.57, 53.7]
         list_t3 =[33.25, 27.63, 27.63,33.25]
-        # n = 1
-        # for i in range(n): 
-        #     list_t1 += list_t1[::-1]
-        #     list_t2 += list_t2[::-1]
-        #     list_t3 += list_t3[::-1]
-        
+
         
         payload = {"Micros":2**int(self.micro.get()), 
                    "M1":list_t1,
@@ -277,6 +272,9 @@ class Application(ttk.Frame):
 
     def clear(self): 
         self.puntos = {"x":[], "y":[],"z":[]}
+        for id, value in enumerate(self.list_ejes):
+            text = value +":" +str(self.puntos[value]) 
+            self.dict_texts[value].config(text= text)
 
 
     def bttn_enviar(self):
