@@ -5,24 +5,25 @@ This repository have the differents algorithms made in the thesis "Diseño e imp
 - [Requirements](#Requirements) 
 - [Step by step](#Step-by-step)
 - [Features](#Features)
+- [Diagrams](#Diagrams)
 - [Future works](#Future-works)
 - [Authors](#Authors)
 
 ### **Requirements** 
 This code was made in a virtual enviroment with python 3.9.10 with the next package. 
-- numpy==1.23.0
-- requests==2.28.1
+- numpy
+- requests
 - tkinter 
 - math 
 
 ### **Step by step**
 1. First, create the virtual enviroment
     
-        $ python -m venv "name_project"
+        $ python -m venv venv
 
 2. Enter to the virtual enviroment, in cmd terminal. 
 
-        $ cd name_project 
+        $ cd venv 
         $ cd scripts 
         $ activate.bat 
 
@@ -49,6 +50,40 @@ Move the end efector to point (0,0,0) in the space. Next on the robot delta. [wi
 - You can reconfigure the dimensions, the aceleration and the speed values in the config button. 
 
 [comment]: <## Best Practices>
+
+## Diagrams
+### Comunication Diagram 
+```mermaid
+graph TD
+    subgraph Red WiFi Local
+    subgraph ESP32
+    S[Servidor Web]
+    end
+    subgraph Cliente
+    C[GUI]
+    end
+    end
+    
+
+    C -->|Solicitud HTTP| S
+    S -->|Respuesta HTTP| C
+
+```
+
+### Sequence Comunication Diagram 
+
+```mermaid 
+sequenceDiagram
+    participant Cliente
+   
+    participant ESP32
+
+    Cliente->>ESP32: Enviar payload con datos de movimientos de motores
+    ESP32-->>Cliente: Confirmación de recepción
+    ESP32->>ESP32: Procesar payload y controlar motores
+
+
+```
 
 ## Future works 
 

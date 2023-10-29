@@ -1,8 +1,10 @@
 GUI/__pycache__/
 venv/
+.venv/
 GUI.rar
 GUI/matlab_Text.txt 
 GUI/server.py
 GUI/tutorial_tkinter.py 
 GUI/readMe.txt
 .gitignore 
+.vscode/
