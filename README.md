@@ -66,7 +66,7 @@ graph TD
     
 
     C -->|Solicitud HTTP| S
-    S -->|Respuesta HTTP| C
+
 
 ```
 
@@ -79,7 +79,6 @@ sequenceDiagram
     participant ESP32
 
     Cliente->>ESP32: Enviar payload con datos de movimientos de motores
-    ESP32-->>Cliente: Confirmación de recepción
     ESP32->>ESP32: Procesar payload y controlar motores
 
 
